@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="style.css">
+        <script src="BreakOut.js"></script>
+        <script src="GameObject.js"></script>
+        <script src="objects/Ball.js"></script>
+        <script src="objects/BlockManager.js"></script>
+        <script src="objects/Block.js"></script>
+        <script src="objects/Paddle.js"></script>
+                
+        <title>BrakeOut</title>
+    </head>
+    <body>
+        <div id="how-to-play-title">
+            <p>How To Play</p>
+        </div>
+        <div id="how-to-play-control">
+            <p>Move Bar … A or D or MouseDrag</p><br>
+        </div>
+
+        <canvas id="myCanvas" width="288" height="512"></canvas>
+        <script>
+            //キャンバス設定   
+            window.canvas = document.getElementById("myCanvas");
+            window.ctx = canvas.getContext("2d");
+
+            //中心座標
+            window.centerPos = {x: canvas.width / 2, y: canvas.height / 2};
+            
+            //スコア
+            window.score = 0;
+
+            //マネージャーインスタンス生成
+            const _breakOut = new BreakOut();
+            
+            //ゲームループ
+            const GameLoop = setInterval(_breakOut.GameLoop, 10);
+            
+        </script>
+    </body>
+</html>
