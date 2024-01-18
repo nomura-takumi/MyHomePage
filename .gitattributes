@@ -1,3 +1,6 @@
 PuzzShoo.zip filter=lfs diff=lfs merge=lfs -text
 KnifeSurvivor.zip filter=lfs diff=lfs merge=lfs -text
 FoxRun filter=lfs diff=lfs merge=lfs -text
+CosmicCommand_PV.mp4 filter=lfs diff=lfs merge=lfs -text
+KnifeSurvivor_play.mp4 filter=lfs diff=lfs merge=lfs -text
+PuzzShoo_PV.mp4 filter=lfs diff=lfs merge=lfs -text
