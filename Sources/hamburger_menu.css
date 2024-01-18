@@ -1,0 +1,111 @@
+
+/* 基本 */
+#hamburger_menu{
+    display: flex;
+    justify-content: space-between;
+    position:fixed;
+    z-index: 99;
+    background-color: rgb(96, 221, 85);
+}
+
+/* 閉じるボタン */
+#hamburger_menu .icon_close{
+    display: none;
+}
+
+/* 開くボタン */
+#hamburger_menu .icon_open{
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor:pointer;
+}
+
+/* 開くボタンを押したとき */
+#hamburger_menu .icon_open span,
+#hamburger_menu .icon_open span::before,
+#hamburger_menu .icon_open span::after{
+    content:'';
+    display: block;
+    height:3px;
+    width:25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position:absolute;
+}
+
+/*  */
+#hamburger_menu .icon_open span::before{
+    bottom:8px;
+}
+
+/*  */
+#hamburger_menu .icon_open span::after{
+    top:8px;
+}
+
+/*  */
+#drawer_input:checked ~ .icon_open span{
+    background:rgba(255, 255, 255, 0);
+}
+
+/* アイコンの移動1 */
+#drawer_input:checked ~ .icon_open span::before{
+    bottom:0;
+    transform:rotate(45deg);
+}
+
+/* アイコンの移動2 */
+#drawer_input:checked ~ .icon_open span::after{
+    top:0;
+    transform:rotate(-45deg);
+}
+
+/* コンテンツ */
+#drawer_input:checked ~ #contents{
+    display: block;
+    animation: fadeIn 0.8s ease-in-out;
+    opacity: 1;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* コンテンツ */
+#hamburger_menu #contents{
+    list-style: none;
+    display: none;
+    opacity: 0;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+/* メニュー */
+#hamburger_menu .nav_item{
+    text-decoration: none;
+    font-size:20px;
+	text-align:center;
+    line-height: 40px;
+	font-weight:bold;
+    
+	color: #fffff0;
+	text-shadow: 
+		0 0.05em 0.08em rgba(0,0,0,0.7);
+
+    padding: 0rem 2rem;
+    border-bottom:4px double #000;
+    /* background-color: #FDF5E6; */
+}
+
+/* スクロール命令 */
+html{
+    scroll-behavior: smooth;
+}
