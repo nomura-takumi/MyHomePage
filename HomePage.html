@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <script src="Sources/homePage.js" src="Sources/privateProfile.js"></script>
+        <link rel="stylesheet" href="Sources/homepage.css">
+        <link rel="icon" href="Images/favicon.ico">
+    </head>
+    <title>就活用ホームページ</title>
+    <body bgcolor="#10100E" text="#FFFFFF">
+        <script src="Sources/modal.js"></script>
+        <div id="top_start"></div>
+        <div class="summary">ホームページ</div>
+        <div id="homepage">
+            <!-- ハンバーガーメニュー -->
+            <div id="hamburger_menu">
+                <input id="drawer_input" class="icon_close" type="checkbox">
+                <label for="drawer_input" class="icon_open"><span></span></label>
+
+                <nav id="contents">
+                    <li><a class="nav_item" href="#top_start">Top</a></li>
+                    <li><a class="nav_item" href="#profile_start">Profile</a></li>
+                    <li><a class="nav_item" href="#works_start">Works</a></li>                
+                    <li><a class="nav_item" href="#games_start">Games</a></li>
+                    <li><a class="nav_item" href="#tools_start">Tools</a></li>
+                    <li><a class="nav_item" href="#others_start">Others</a></li>
+                </nav>
+
+                <!-- コンテンツがクリックされるとメニューを閉じる -->
+                <script>CloseHumbergerMenu();</script>
+            </div>
+
+            <!-- 日付 -->
+            <input class="UpdateButton" type="button" value="update" onclick="StoreLastUpdated()">
+            <div id="LastUpdated">
+                <p>Last Updated:</p>
+                <script>GetLastUpdated()</script>
+            </div>
+            <input class="HideInfoButton" type="button" value="hide" onclick="HideInfo()">
+            <p id="RealTimeClock"></p>
+        </div>
+
+        <br><hr>
+        <!-- プロフィール -->
+        <div id="profile_start"></div>
+        <div class="summary"><p>～ Profile ～</p></div>
+        <div id="profile">
+            <div id="text">
+                    <p>ＮＡＭＥ　　　　　 ： <div class="hideInfo">野村 拓巳(Nomura Takumi)</div></p><br>
+                    <p>ＡＧＥ　　　　　　 ： <div class="hideInfo">21</div></p><br>
+                    <p>ＮＡＴＩＯＮＡＬ　 ： JP</p><br>
+                    <p>ＳＴＡＴＵＳ　　　 ： <div class="hideInfo">HAL東京ゲーム4年制学科 3年</div></p><br>
+                    <p>ＲＯＬＥ　　　　　 ： Programmer</p><br>
+                    <p>ＬＡＮＧＵＡＧＥＳ ： C / C++ / C# / VBA<br>
+                        　　　　　　　　　　 　a little...( JavaScript / CSS / HTML / Python / Query )</p><br>
+                    <p>ＳＫＩＬＬＳ 　　　：<br>
+                        　　　　　　　　　　　　　VBA　　　　　★★★★★</br>
+                    　　　　　　　　　　　　　C++　　　　　★★★★☆</br>
+                    　　　　　　　　　　　　　C# 　　　　　★★★★☆</br>
+                    　　　　　　　　　　　　　JavaScript　　★★★☆☆</br>
+                    　　　　　　　　　　　　　HTML　　　　 ★★☆☆☆</br>
+                    　　　　　　　　　　　　　CSS　 　　　 ★★☆☆☆</br>
+                    　　　　　　　　　　　　　Touch Typing(5.8 ～ 6.0type per sec)</br></p>
+                    <p>ＬＩＣＥＮＳＥ　 　：<br>
+                        <div id="skill">
+                    　　　　　　　　　　　　　　　　　'19/05/22「基本情報技術者試験」<br>
+                    　　　　　　　　　　　　　　　　　'19/07/12「ITパスポート試験」<br>
+                    　　　　　　　　　　　　　　　　　'21/10/21「J検情報システム試験プログラマ認定」<br>
+                    　　　　　　　　　　　　　　　　　'22/10/22「J検情報システム試験システムエンジニア認定」<br>
+                    　　　　　　　　　　　　　　　　　'23/08/04「CGエンジニア検定エキスパート」「画像処理エンジニア検定ベーシック」</div></p><br>
+                    
+                    <p>ＰＲＩＺＥ　　　　 ： <div class="hideInfo">'22/03/10「HAL EVENT WEEK　プログラミング力賞」</div><br>
+                    　 　　　　　　　　　<div class="hideInfo"> '23/10/25「夏の３Ｄゲーム学内コンテスト　技術力賞」</div></p><br>
+                    <p></p>
+                    <p>ＦＡＶＯＲＩＴＥ　 ： 東方<span style="color: red;">紅</span>魔郷</p><br>
+                </div>
+
+<!--就活用ホームページ-->
+            <div class="item">
+                <div class="title"></div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/photo2.jpg" onclick="ModalOpen(0)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div>
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>就活用ホームページ</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    このホームページでは、自分のアピールしたい作品を集めて紹介をしています。<br>
+                                    ホームページ制作を行った理由は、主に以下の通りです。<br>
+                                    ・私のこと、私ができることを知ってもらいたい<br>
+                                    ・新しいことに挑戦したい<br>
+                                    ・他の学生との差別化を図りたい<br>
+                                    ・企業への作品提出の際に「作品が閲覧できるWebサイト欄」がオンラインストレージのURLではカッコ悪いと思った<br><br>
+                                    
+                                    作品はサムネイルをタップすると、現在のように詳細が見れます。詳細には説明文・制作情報・動画やプレイリンクなどがあります。<br>
+                                    気になるタイトルがありましたら、詳細まで閲覧お願いします。<br>
+
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年9月中旬～<br>
+                                    制作時間：50時間以上(現在)<br>
+                                    使用言語：HTML　CSS　JavaScript<br>
+                                    技術　　：CSSとJSによる見栄えの向上　ハンバーガーメニュー　モーダルウィンドウ<br><br><br>
+                                    
+                                    HAL東京ゲーム4年制学科 3年<br>
+                                    野村 拓巳<br><br>
+                                    mail: ths10335@ths.hal.ac.jp
+                                </div>
+                            </div>
+                            <!-- <video src="Videos/KnifeSurvivor_promo.mp4" controls playsinline></video> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guide">
+            <img src="Videos/contents_guide.gif"><br>
+        </div>
+        <div id="sushi_da">
+            <div id="title"><p>寿司打 -sushi_da-</p></div>
+            <div id="video"><video src="Videos/sushi_da_expensive.mp4" controls playsinline width="400" height="300"></video></div>
+            <div id="text">
+                <p>～ 作品の閲覧方法 ～</p>
+                <p>作品のサムネイルをタップするとコンテンツの詳細を見ることができます。</p>
+                <p>気になるタイトルがありましたら、閲覧お願いします^^</p>
+                <p>寿司打がちょっと得意です。</p>
+                <p>ミスがまだまだ多いので、速度を保ちつつ、より正確に打てるようになりたいです。</p>
+            </div>
+        </div>
+        
+        <hr>
+
+        <!-- 作品 -->
+        <div id="works_start"></div>
+        <div class="summary"><p>～ ＷＯＲＫＳ ～</p></div>
+
+        <hr>
+
+        
+
+        <!-- ゲーム -->
+        <div id="games_start"></div>
+        <div class="summary"><p>ＧＡＭＥＳ</p></div>
+        <div id="works">
+
+<!--Othello-->
+            <div class="item">
+                <div class="title">Othello</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/othello.png" onclick="ModalOpen(1)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div> 
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>Othello</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    オセロのアルゴリズムを自分で考えて作りました。<br>
+                                    TCP通信を実装しているので、サーバーとクライアントで対戦できます。<br>
+                                    初めてネットワーク通信を使ったゲームを作ったので手探りの中、制作をしました。
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年5月末頃<br>
+                                    制作時間：10時間未満<br>
+                                    使用言語：C++<br>
+                                    技術　　：ソケットプログラミング<font size="1">(WinSock2)</font>
+                                </div>
+                            </div>
+                            <video src="Videos/Othello.mp4" controls playsinline></video>
+                            <div class="other">
+                                <!-- <div class="evaluate">
+                                    以下、開発中です…<br>
+                                    <img class="img" src="Images/good.png" onclick="GoodClick('FoxRun')">
+                                    <p>！！！！！高評価忘れずに！！！！！</p>
+                                </div> -->
+                                <div class="Downloads">
+                                    <img class="img" src="Images/download_icon.png">
+                                    <a href="Downloads/Othello.zip" Downloads="">ダウンロード</a>
+                                </div>
+                                <div class="play">
+                                    <img class="img" src="Images/play_icon.png">
+                                    <a href="">プレイ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--KnifeSurvivor-->
+            <div class="item">
+                <div class="title">KnifeSurvivor</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/knife_survivor.png" onclick="ModalOpen(2)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div>
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>KnifeSurvivor</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    「ヴァンサバ形式のゲームを3Dで作ったら面白いのでは？」<br>
+                                    というアイデアで作りました。<br>
+                                    頑張った部分はリソース管理です。<br>
+                                    フライウェイトパターンを用いて、効率良くリソースを使い回せました。<br>
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年9月6日～2023年9月8日<br>
+                                    制作時間：35時間未満<br>
+                                    使用言語：C++(DirectX11)<br>
+                                    技術　　：効率的なリソース管理<br>
+                                    評価　　：三校合同コンテスト<br>
+                                    　　　　　<font size="0.5">(夏の３Ｄゲーム学内コンテスト)</font>技術力賞
+                                </div>
+                            </div>
+                            <video src="Videos/KnifeSurvivor_promo.mp4" controls playsinline></video>
+                            <div class="other">
+                                <div class="Downloads">
+                                    <img class="img" src="Images/download_icon.png">
+                                    <a href="Downloads/KnifeSurvivor.zip" Downloads="">ダウンロード</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--FoxRun-->
+            <div class="item">
+                <div class="title">FoxRun</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/fox_run.png" onclick="ModalOpen(3)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div>
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>FoxRun</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    学校の授業で制作した作品です。<br>
+                                    純粋にゲームを作ることを楽しみながら作りました。<br>
+                                    なのでアセットを多用していますがご了承ください。<br>
+                                    演出関連をこだわってみました。<br>
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年4月～2023年9月末<br>
+                                    制作時間：40時間以上<br>
+                                    使用言語：C#(Unity)<br>
+                                    技術　　：様々な演出の実装<br>
+                                    評価　　：(授業評価)90点<br>
+                                </div>
+                            </div>
+                            <video class="cts" src="Videos/FoxRun.mp4" controls playsinline ></video><br>
+                            <div class="other">
+                                <div class="play">
+                                    <img class="img" src="Images/play_icon.png">
+                                    <a href="Games/FoxRun/FoxRun.html" target="_blank" ref="noopener noreferrer">プレイ</a>
+                                </div>
+                                <div class="Downloads">
+                                    <img class="img" src="Images/download_icon.png">
+                                    <a href="Downloads/FoxRun.zip" Downloads="">ダウンロード</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+<!--RushHourControl-->
+            <div class="item">
+                <div class="title">RushHourControl</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/rush_hour_control.png" onclick="ModalOpen(4)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div>
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>RushHourControl</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    ぷちコンの作品兼、学校の課題です。<br>
+                                    Unreal Engineが使い慣れていませんでしたが、作品として完成できました。<br>
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年8月30日～2023年9月4日<br>
+                                    制作時間：30時間以上<br>
+                                    使用言語：なし(UE4 ブループリント)<br>
+                                    技術　　：レイの処理　プレイヤー切り替え<br>
+                                    評価　　：(授業評価)85点<br>
+                                </div>
+                            </div>
+                            <video src="Videos/RushHourControl.mp4" controls playsinline></video>
+                            <div class="other">
+                                <div class="Downloads">
+                                    <img class="img" src="Images/download_icon.png">
+                                    <a href="Downloads/Othello.zip" Downloads="">ダウンロード</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--BreakOut-->
+            <div class="item">
+                <div class="title">BreakOut</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/break_out.png" onclick="ModalOpen(5)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div> 
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>BreakOut</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    株式会社サクセスでのインターンシップが決まり、事前訪問でブラウザゲームを作ると知って開発を始めました。<br>
+                                    C#は扱えたので、JavaScriptはそれほど苦痛には感じませんでした。<br>
+
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年9月18日～2023年9月24日<br>
+                                    制作時間：10時間未満<br>
+                                    使用言語：JavaScript<br>
+                                    技術　　：JavaScriptの習得<br>
+                                </div>
+                            </div>
+                            <video src="Videos/BreakOut.mp4" controls playsinline></video>
+                            <div class="other">
+                                <div class="play">
+                                    <img class="img" src="Images/play_icon.png">
+                                    <a href="Games/BrakeOut/index.html" target="_blank" ref="noopener noreferrer">プレイ</a>
+                                </div>
+                                <div class="Downloads">
+                                    <img class="img" src="Images/download_icon.png">
+                                    <a href="Downloads/Othello.zip" Downloads="">ダウンロード</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<!--SolitaireRussian-->
+            <div class="item">
+                <div class="title">SolitaireRussian</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/solitairerussian.png" onclick="ModalOpen(6)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div> 
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>SolitaireRussian</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    株式会社サクセスのインターンシップで制作した作品です。<br>
+                                    サクセスで使用しているライブラリを読み解きながら進めていたので時間がかかりました。<br>
+                                    前半2週間でゲームのロジックの基礎、後半2週間でゲームの不具合修正を行いました。<br>
+                                    ロジック自体もカード単体や場札、組札とのリレーションをプログラムでどう表現するか大変でした。<br>
+                                    常に時間に追われていて、最終日の業務終了1時間前まで不具合修正をしていました。コンティニューとUndoの実装のことを考えると、今でも苦しくなります…
+                                    正直辛かったです。(笑)<br>
+                                    が、貴重な経験をたくさんできました。<br>
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年10月<br>
+                                    制作時間：120時間以上<br>
+                                    使用言語：JavaScript<br>
+                                    技術　　：<font size="2">シングル・ダブルの2ゲームに柔軟に対応</font><br>
+                                    　　　　　コマンドパターンの使用<br>
+                                    評価　　：もっと報連相を徹底すること<br>
+                                </div>
+                            </div>
+                            <video src="Videos/SolitaireRussian.mp4" controls playsinline></video>
+                            <div class="other">
+                                <div class="play">
+                                    <img class="img" src="Images/play_icon.png">
+                                    <a href="https://h5Games.success-corp.co.jp/game/play/su-255-solitairerussian" target="_blank" ref="noopener noreferrer">プレイ</a>
+                                    <span style=color:red>　※音量注意</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<!--DropDefence-->
+            <div class="item">
+                <div class="title">DropDefence</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/DropDefence.png" onclick="ModalOpen(7)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div> 
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>DropDefence</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    2023年の「クリぼっちハッカソン」という学内イベントで制作したゲームです。<br>
+                                    お題は「た つ」でした。私たちのチームでは案出しの中で「断つ」と「建つ」を連想した案が最後に残りましたが、
+                                    結果的に「建つ」で、"迫りくる敵を建物を落として妨害するゲーム" を目指して作りました。<br>
+                                    メンバーは3年・3人、2年・2人、1年、1人の計6人で、全員がプログラマーといった編成でした。<br>
+                                    私が担当した部分は、カメラ挙動です。ターゲットを中心に円周上にカメラを回す仕組みを作りました。
+                                    あとは1年生やUnity・C#に不慣れなメンバーも居たので、その人たちのヘルプに回ってました。<br>
+                                    最後には参加者同士で作品の試遊会をし、その後投票をしました。<br>
+                                    投票数が2番目に多いチームということで結果も残せて良かったです。<br>
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年12月25日<br>
+                                    制作時間：6時間<br>
+                                    使用言語：C#(Unity)<br>
+                                    評価　　：2023年クリぼっちハッカソン 4年制チーム内で票数2位<br>
+                                </div>
+                            </div>
+                            <video src="Videos/DropDefence.mp4" controls playsinline></video>
+                            <div class="other">
+                                <div class="play">
+                                    <img class="img" src="Images/play_icon.png">
+                                    <a href="Games/DropDefence/index.html" target="_blank" ref="noopener noreferrer">プレイ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--PuzzShoo-->
+            <div class="item">
+                <div class="title">PuzzShoo</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/team_1st.png" onclick="ModalOpen(8)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div> 
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>PuzzShoo</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    2年次の進級制作展でのチーム制作で作ったゲームです。<br>
+                                    あまり良い思い出が無いのでHPに載せるか迷いましたが、チーム制作を経験してきたこともアピールすべきだと思ったので掲載します。
+                                    担当した部分と、自己分析のテキストが残っていたので、その二つを軸に綴ります。その方が良さそうです。<br><br>
+                                    私が担当したのは、ツール制作(後掲の「パラめ～とる」と「ReadCSV」)とStage3、4のギミックです。
+                                    Stage3はボス戦で、ボスのステート管理やフェーズ管理、他の雑魚敵の挙動などを担当しました。
+                                    Stage4は変わり種として、弾を消す壁と跳弾する壁を作りました。<br>
+                                    また、これらの配置は、私が制作したツールを使いました。<br><br>
+                                    立場はメインプログラマーを支えるような役だったので、方針などは中心となるメンバーたちとはよく相談し合いました。<br>
+                                    自己分析としては、そんな役柄だったのでチームメンバーに対してちゃんとコミュニケーションをとり、サポートすることができました。
+                                    また、今誰が何をしているかをできるだけ把握するように意識していました。<br>
+                                    タスクを振るときは個々の能力を分析して、見合ったタスクを相談してから与えられたのは良かったのではないかと自負しています。<br>
+                                    良くなかったのは、自分が正しいと思ったことは役柄を気にせずにチーム内で話し合うべきだったことです。<br>
+                                    あとは、案出しが苦手すぎたことです。プランナー的思考が足りておらず、面白いシステムを考えることができなかったのも、メンバーとして力不足なところがありました。<br>
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2022年10月頭～2023年1月末<br>
+                                    使用言語：C++(DirectX11)<br>
+                                </div>
+                            </div>
+                            <video src="Videos/PuzzShoo_PV.mp4" controls playsinline></video>
+                            <div class="other">
+                                <div class="Downloads">
+                                    <img class="img" src="Images/download_icon.png">
+                                    <a href="Downloads/PuzzShoo.zip" Downloads="">ダウンロード</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--CosmicCommand-->
+            <div class="item">
+                <div class="title">CosmicCommand</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/team_2nd.png" onclick="ModalOpen(9)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div> 
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>CosmicCommand</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    日本ゲーム大賞制作(チーム制作)で作ったゲームです<br>
+                                    こちらも辛いものだったのでHPに載せるか迷いましたが…(以下略)<br>
+                                    テーマは「こだわり」でした。<br>
+                                    プレイヤー挙動とカメラに「こだわり」すぎたことや、チーム運営が上手くいかなかったという色々な要因があって、「Demo用のステージしか用意できなかった」という結果になってしまいました…<br><br>
+                                    私の役割としてはメインプログラマーを務めました。<br>
+                                    担当部分は、ほぼ全てです。厳密には着地時のエフェクトとミニマップ以外を担当しました。<br>
+                                    
+                                    他責思考は嫌いですが、こればかりはチームメンバーに能動的になってもらえなかったのが一番の原因だったと思います。
+                                    出席状況の不安定さ、技術力の不足、向上心の無さなど色々な要素を抱えたメンバーが居たのは事実です。
+                                    私自身はチームリーダー、友達、先生に相談をしたり、チーム運営について研究したり、本人たちと面談したりして、手は尽くしたのではないかと思っています。
+                                    それでも個々の意識まで変えることはできませんでした。<br>
+
+                                    ですが、どんなに小さなタスクでもなるべくメンバーに振ってあげたりと、チーム制作の意義を忘れずに最後までチーム運営をしつつ、Demoまでは作ることができました。<br>
+                                    メンバー一人一人の意識がこれほどまでチーム制作に影響するということを身をもって知りました。<br>
+                                    (制作終了から1か月間、しっかり"めまい"に悩まされました…)<br><br>
+                                    アセットは残っているので、時間があれば個人でリブート版を作りたいと考えています。<br>
+
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年2月頭～2023年5月末<br>
+                                    使用言語：C#(Unity)<br>
+                                </div>
+                            </div>
+                            <video src="Videos/CosmicCommand_PV.mp4" controls playsinline></video>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+<!--ゲームは以上-->
+        </div>
+        
+        <div id="ComingSoon">
+            <br><br>
+            <p>ComingSoon...(?)</p>
+            <div id="contents">
+                <p>Mage</p>
+                <p>JumpOnRadder!</p>
+                <p>PazzleButtle</p>
+            </div>
+        </div>
+
+        <CenterLine><hr></CenterLine>
+
+        <!-- ツール -->
+        <div id="tools_start"></div>
+        <div class="summary"><p>ＴＯＯＬＳ</p></div>
+        <div id="works">
+
+<!--パラめ～とる-->
+            <div class="item">
+                <div class="title">パラめ～とる</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/csv_maker.png" onclick="ModalOpen(10)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div>
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>パラめ～とる</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    CSV作成ツールです。<br>
+                                    2年生の進級制作展でのチーム制作向けに作りました。「プランナーのレベルデザインが楽になると良いね」といった経緯だったので、かなり頑張って制作しましたが、
+                                    チーム内では私以外使いませんでした…<br>使えるレベルまでゲーム制作側が思うように進まなかったのが原因でした。<br><br>
+
+                                    生成されるCSVファイルについてです。<br>
+                                    私のチーム制作向けに作ったツールなので、フォーマットはC++側で楽に読み込めるように整った状態で出力されます。
+                                    一般的なCSVファイルとは中身が異なるので、「CSV」を名乗るべきではないと思うのですが、「カンマ区切りの値」を取り扱っているので、拡張子はそのままです。<br>
+                                    「オブジェクトのパラメーターを集約したファイル」という扱いにしたくて、1行につき1オブジェクトの名前とパラメーターを格納しました。<br>
+                                    1オブジェクトが持つパラメーター数を読み込み処理側で簡単に判定するために、"EOC"(EndOfColumn)という文字列を行の最後尾に挿入してあります。<br>
+                                    「オンライン上でもパラメーターを共有できたら良いな」と考え、パラメーター出力時にチームのDiscordにもテキストメッセージを自動で送るようにしましたが、
+                                    ツール自体使われなかったので、その名残りだけが残っています…
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2022年10月～2023年1月<br>
+                                    制作時間：40時間以上<br>
+                                    使用言語：VBA<br>
+                                    技術　　：配置のプレビュー表示　Discord通知機能<br>
+                                </div>
+                            </div>
+                            <video src="Videos/パラめ～とる.mp4" controls playsinline></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--ReadCSV-->
+            <div class="item">
+                <div class="title">ReadCSV</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/othello.png" onclick="ModalOpen(11)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div>
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>ReadCSV</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    パラめ～とるで生成したCSVファイルの読み込みプログラムです。<br>
+                                    特定の型だけに変換するのではなく、色々な型が混在してもその通りにパースをしたかったので、
+                                    文字列をどうやってint型とfloat型に仕分けして実装するのか、といったところが一番苦戦しました。<br>
+                                    まだtemplateに対しての理解がまだ甘かったので、対策しきれていない不具合も残っています。<br>
+                                    変換自体は行単位で行いますが、アクセスがかなり面倒です。<br>
+                                    ユーザーに対して優しい設計になっていなかったというのと、挙動も不完全であったため、後に進化版を作成しました。<br><br>
+                                    最低限の変換はできるのと、ヘッダーファイルのみで動くように工夫しました。<br><br>
+                                    ゲームの制作時にはオブジェクトの座標が保存されたCSVファイルを読み込んで変換する、といった用途で使われました。<br>
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2022年10月～2023年1月<br>
+                                    制作時間：60時間以上<br>
+                                    使用言語：C++<br>
+                                    技術　　：template関数　CSVからのコンバート処理<br>
+                                </div>
+                            </div>
+                            <video src="Videos/ReadCSV.mp4" controls playsinline></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--CSV_Parser-->
+            <div class="item">
+                <div class="title">CSV_Parser</div>
+                <div class="modalOpen">
+                    <div class="img">
+                        <img src="Images/othello.png" onclick="ModalOpen(12)">
+                        <div class="hover-text">タップして詳細表示</div>
+                    </div>
+                </div>
+                <div class="modal-window">
+                    <div class="modal-contents">
+                        <div class="modal-header">
+                            <h1>CSV_Parser</h1>
+                            <span class="modalClose" onclick="ModalClose()">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text">
+                                <div class="free-text">
+                                    ReadCSVの強化版です。<br>
+                                    名前を「CSV_Parser」と改めました。(パーサーを名乗るのは少し"おこがましい"気がしますが。)<br>
+                                    ReadCSV作成当時の技術力からかなり進歩したのでその力試し、またReadCSVの欠点や使用時の煩雑さを改善するために作り直しました。<br><br>
+                                    記述すべきコード量についてです。<br>
+                                    ReadCSVでは一つ一つのオブジェクト単位でパース処理をする必要があったため、コード量はオブジェクト数(CSVファイルのEOCの数)に比例します。
+                                    またそこからコンテナに格納されたパース後のパラメーターにアクセスするので、かなり煩雑なコードになっていました。<br>
+                                    一方CSV_Parserは、<br>
+                                    1.インクルード<br>
+                                    2.ファイルのパースとパース後のデータ取得処理<br>
+                                    3.対象行のデータ取得<br>
+                                    4.パラメーターへのアクセス<br>
+                                    といった最低4行です。<br>
+                                    まだver1.0.0で、具体的な値へのアクセスに対して使いにくさがあるので、随時更新していきます。<br>
+                                    
+                                </div>
+                                <div class="text-border"></div>
+                                <div class="info-text">
+                                    制作期間：2023年11月3日～2023年11月9日<br>
+                                    制作時間：15時間未満<br>
+                                    使用言語：C++<br>
+                                    技術　　：スマートポインタ　テンプレート関数　CSVのパース<br>
+                                </div>
+                            </div>
+                            <video src="Videos/CSV_Parser.mp4" controls playsinline></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div id="ComingSoon">
+            <br><br>
+            <p>ComingSoon...(?)</p>
+            <div id="contents">
+                <p>CSV_Parser ver.2.0.0</p>
+                <p>Particle Generator</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- 外部リンク -->
+        <div id="others_start"></div>
+        <div class="summary"><p>～ ＯＴＨＥＲＳ ～</p></div>
+        <div id="url">
+            <font size="1"><p>click here!</p></font></spam>
+            <a class="link" href="https://youtube.com/@user-ig7xb2rc7x?si=qgSbwscsJVdmDlbE" target="_blank" ref="noopener noreferrer">youtubeチャンネル</a><br>
+            <a class="link" href="https://discord.gg/5mdPNF6mhk" target="_blank" ref="noopener noreferrer">Discordサーバー</a><br>
+            <!-- <a class="link" href="https://drive.google.com/drive/u/1/folders/1i_zuaHQAYfDlUCpKiY4zuVZCL4jjLVFF" target="_blank" ref="noopener noreferrer">プログラム作品集</a> -->
+        </div>
+    
+        <div id="footer">
+            <footer>Copyright&copy;2023 Nomura_Takumi All Rights Reserved.</footer>
+        </div>
+    </body>
+</html>
