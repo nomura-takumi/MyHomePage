@@ -110,6 +110,15 @@
     right:0;
 }
 
+/* iframeタグ */
+.modal-body iframe{
+    margin-left:10px;
+    width:40%;
+    height:40%;
+    object-fit: cover;
+    right:0;
+}
+
 /* その他コンテンツ */
 .modal-body .other{
     position: fixed;

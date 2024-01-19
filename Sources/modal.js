@@ -26,6 +26,11 @@ function ModalClose(){
     document.querySelectorAll("video").forEach((element)=>{
         element.pause();
     });
+
+    document.querySelectorAll("iframe").forEach((element)=>{
+        youtubeControl(element, 'pauseVideo');
+    });
+
     // スクロール解除
     document.removeEventListener('touchmove', disableScroll, {passive: false});
     document.removeEventListener('mousewheel', disableScroll, {passive: false});
@@ -51,6 +56,10 @@ function NonHover(){
         });
 }
 
+//APIのコマンドを送信する関数
+const youtubeControl = function(element, action, arg=null){
+    element.contentWindow.postMessage('{"event":"command", "func":"'+action+'", "args":'+arg+'}', '*');
+};
 
 //プレイ
 function PlayClick(name){
