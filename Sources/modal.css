@@ -72,6 +72,7 @@
 .modal-body{
     display: flex;
     padding:20px 10px 0px 10px;
+    height:100%;
 }
 
 /* モーダルのテキスト */
@@ -113,7 +114,7 @@
 /* iframeタグ */
 .modal-body iframe{
     margin-left:10px;
-    width:40%;
+    width:70%;
     height:40%;
     object-fit: cover;
     right:0;
@@ -123,7 +124,7 @@
 .modal-body .other{
     position: fixed;
     margin-left: 35%;
-    margin-top:17%;
+    padding-top:20%;
 }
 
 /* 評価 */
