@@ -15,11 +15,27 @@
     position: relative;
     width:200px;
     height:200px;
-    border: 5px solid #edadf3;
+    border: 5px solid #f5e0b2;
 
     transform: scale(1.0, 1.0);
     transition:0.3s all;
     filter:brightness(100%);
+}
+
+#works .img .gold{
+    border: 7px solid #eeec5f;
+}
+
+#works .img .silver{
+    border: 7px solid #aca9a3;
+}
+
+#works .img .bronze{
+    border: 7px solid #9e8412;
+}
+
+#works .img .team{
+    border: 7px solid #2848d4;
 }
 
 /* imgタグにマウスホバーしたとき */
