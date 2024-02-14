@@ -109,6 +109,7 @@
     height:40%;
     object-fit: cover;
     right:0;
+    z-index: 1;
 }
 
 /* iframeタグ */
@@ -118,6 +119,7 @@
     height:40%;
     object-fit: cover;
     right:0;
+    z-index: 1;
 }
 
 /* その他コンテンツ */
@@ -125,6 +127,7 @@
     position: fixed;
     margin-left: 35%;
     padding-top:20%;
+    z-index: 0;
 }
 
 /* 評価 */
@@ -151,7 +154,7 @@
 }
 
 /* ダウンロード画像 */
-.modal-body .other .Downloads .img{
+.modal-body .other .download .img{
     width:5%;
     height:5%;
 }
