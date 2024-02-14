@@ -1,4 +1,12 @@
 
+document.querySelectorAll("iframe").forEach((iframe)=>{
+	new YT.Player(iframe,{
+		events:{
+			'onReady':AddPlayer(event)
+		}
+	});
+});
+
 let modalWindow = null;
 function ModalOpen(number){
     let modals = document.getElementsByClassName("modal-window");
@@ -9,6 +17,27 @@ function ModalOpen(number){
     document.addEventListener('touchmove', disableScroll, {passive: false});
     document.addEventListener('mousewheel', disableScroll, {passive: false});
 }
+
+let players = [];
+
+window.addEventListener('load', function(){
+	document.querySelectorAll("iframe").forEach((iframe, index) => {
+		iframe.id = 'player' + index;
+		let vId = iframe.src.split("/embed/")[1].split("?")[0];
+	
+		let player = new YT.Player(iframe.id, {
+			videoId:vId,
+			origin:window.location.origin,
+			events: {
+				'onReady': function(event) {
+					event.target.playVideo();
+					console.log('ready');
+					players.push(event.target);
+				}
+			}
+		});
+	});
+});
 
 
 function ModalClose(){
@@ -23,18 +52,41 @@ function ModalClose(){
         }, 400);
     }
     //動画停止
-    document.querySelectorAll("video").forEach((element)=>{
-        element.pause();
-    });
+	players.forEach((player)=>{
+		player.pauseVideo();
+	});
 
-    document.querySelectorAll("iframe").forEach((element)=>{
-        youtubeControl(element, 'pauseVideo');
-    });
+    // document.querySelectorAll("video").forEach((element)=>{
+    //     element.pause();
+    // });
 
+	// document.querySelectorAll("iframe").forEach((element)=>{
+	// 	let targetWindow = element.contentWindow;
+	// 	targetWindow.postMessage('{"event":"command", "func":"'+"pauseVideo"+'", "args":""}', '*');
+	// });
+	
+	// var iframes = document.getElementsByTagName('iframe');
+    // for (var i = 0; i < iframes.length; i++) {
+    //     var iframe = iframes[i];
+    //     var iframeSrc = iframe.src;
+    //     iframe.src = iframeSrc; 
+    // }
+
+	// document.querySelectorAll("iframe").forEach((element)=>{
+	// 	let targetWindow = element.contentWindow;
+	// 	targetWindow.postMessage('{"event":"command", "func":"'+"pauseVideo"+'", "args":'+null+'}', '*');
+	// });
+
+	
+	
     // スクロール解除
     document.removeEventListener('touchmove', disableScroll, {passive: false});
     document.removeEventListener('mousewheel', disableScroll, {passive: false});
 }
+
+
+
+
 
 addEventListener("click", OutSideClose);
 function OutSideClose(event){
