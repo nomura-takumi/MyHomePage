@@ -20,7 +20,12 @@ function ModalOpen(number){
 
 let players = [];
 
-window.addEventListener('load', function(){
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+window.onYouTubeIframeAPIReady = function(){
 	document.querySelectorAll("iframe").forEach((iframe, index) => {
 		iframe.id = 'player' + index;
 		let vId = iframe.src.split("/embed/")[1].split("?")[0];
@@ -28,17 +33,10 @@ window.addEventListener('load', function(){
 		let player = new YT.Player(iframe.id, {
 			videoId:vId,
 			origin:window.location.origin,
-			events: {
-				'onReady': function(event) {
-					event.target.playVideo();
-					console.log('ready');
-					players.push(event.target);
-				}
-			}
 		});
+		players.push(player);
 	});
-});
-
+}
 
 function ModalClose(){
     if(modalWindow){
@@ -55,37 +53,14 @@ function ModalClose(){
 	players.forEach((player)=>{
 		player.pauseVideo();
 	});
-
-    // document.querySelectorAll("video").forEach((element)=>{
-    //     element.pause();
-    // });
-
-	// document.querySelectorAll("iframe").forEach((element)=>{
-	// 	let targetWindow = element.contentWindow;
-	// 	targetWindow.postMessage('{"event":"command", "func":"'+"pauseVideo"+'", "args":""}', '*');
-	// });
-	
-	// var iframes = document.getElementsByTagName('iframe');
-    // for (var i = 0; i < iframes.length; i++) {
-    //     var iframe = iframes[i];
-    //     var iframeSrc = iframe.src;
-    //     iframe.src = iframeSrc; 
-    // }
-
-	// document.querySelectorAll("iframe").forEach((element)=>{
-	// 	let targetWindow = element.contentWindow;
-	// 	targetWindow.postMessage('{"event":"command", "func":"'+"pauseVideo"+'", "args":'+null+'}', '*');
-	// });
-
-	
+    document.querySelectorAll("video").forEach((element)=>{
+        element.pause();
+    });
 	
     // スクロール解除
     document.removeEventListener('touchmove', disableScroll, {passive: false});
     document.removeEventListener('mousewheel', disableScroll, {passive: false});
 }
-
-
-
 
 
 addEventListener("click", OutSideClose);
