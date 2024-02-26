@@ -6,9 +6,15 @@ function StoreLastUpdated(){
 }
 
 //最終更新日を取得して出力
-function GetLastUpdated(){
+function GetLastUpdated(str){
     let item = localStorage.getItem("LastUpdated");
-    document.getElementById("LastUpdated").textContent = "Last Updated:　" + item;
+
+    if(str != null){
+        document.getElementById("LastUpdated").textContent = "Last Updated:　" + str;
+    }
+    else{
+        document.getElementById("LastUpdated").textContent = "Last Updated:　" + item;
+    }
 }
 
 //現在時刻を出力
