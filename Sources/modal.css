@@ -158,3 +158,13 @@
     width:5%;
     height:5%;
 }
+
+
+@media screen and (max-width:1436px){
+    /* ƒ‚[ƒ_ƒ‹‚Ì’†g */
+    .modal-body{
+        display: flex;
+        padding:00px 0px 0px 0px;
+        height:100%;
+    }
+}
