@@ -66,6 +66,14 @@ a.play{
     text-align:center;
 }
 
+/* 作品種類 */
+.works_type{
+    color: bisque;
+    font-size: 25px;
+    text-align:center;
+}
+
+
 /* フッター */
 #footer{
     text-align: center;

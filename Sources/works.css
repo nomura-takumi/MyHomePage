@@ -15,38 +15,67 @@
     position: relative;
     width:200px;
     height:200px;
-    border: 5px solid #f5e0b2;
+    border: 5px solid #ffffff;
 
     transform: scale(1.0, 1.0);
     transition:0.3s all;
     filter:brightness(100%);
 }
 
-#works .img .gold{
-    border: 7px solid #eeec5f;
+/* ベスト */
+#works .best_img img{
+    position: relative;
+    width:550px;
+    height:350px;
+    border: 5px solid #ffffff;
+
+    transform: scale(1.0, 1.0);
+    transition:0.3s all;
+    filter:brightness(100%);
+    margin-top: 2%;
 }
 
-#works .img .silver{
-    border: 7px solid #aca9a3;
+/* ベター */
+#works .better_img img{
+    position: relative;
+    width:550px;
+    height:350px;
+    border: 5px solid #ffffff;
+
+    transform: scale(1.0, 1.0);
+    transition:0.3s all;
+    filter:brightness(100%);
+    margin-top: 2%;
 }
 
-#works .img .bronze{
-    border: 7px solid #9e8412;
+/* 金枠 */
+#works .best_img .gold{
+    border: 7px solid;
+    border-image: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%)1;
 }
 
+/* 銀枠 */
+#works .better_img .silver{
+    border: 7px solid;
+    border-image: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%)1;
+}
+
+/* チーム枠 */
 #works .img .team{
-    border: 7px solid #2848d4;
+    border: 7px solid #ffffff;
 }
 
 /* imgタグにマウスホバーしたとき */
-#works .img img:hover{
+#works img:hover{
     transform:scale(1.2, 1.2);
     transition:0.3s all;
     filter: brightness(40%);
+
+    z-index: 1;
 }
 
 /* imgタグにマウスホバーしたときのテキスト */
-#works .img img:hover + .hover-text{
+#works img:hover + .hover-text{
     opacity: 1;
 }
 
@@ -61,6 +90,38 @@
     font-size: 20px;
     white-space: nowrap;
     pointer-events: none;
+
+    z-index: 1;
+}
+
+/* ホバーテキスト */
+#works .best_img .hover-text{
+    position: relative;
+    opacity: 0;
+    top:50%;
+    left:50%;
+    transform: translate(-25%, -500%);
+    transition: opacity 0.3s;
+    font-size: 30px;
+    white-space: nowrap;
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+/* ホバーテキスト */
+#works .better_img .hover-text{
+    position: relative;
+    opacity: 0;
+    top:50%;
+    left:50%;
+    transform: translate(-25%, -500%);
+    transition: opacity 0.3s;
+    font-size: 30px;
+    white-space: nowrap;
+    pointer-events: none;
+
+    z-index: 1;
 }
 
 /* アイテム */
@@ -75,4 +136,19 @@
     margin-bottom:20px;
     font-size: 20px;
     font-weight: bold;
+}
+
+#works .item .title .best{
+    background: linear-gradient(90deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
+  background: -webkit-linear-gradient(0deg, #B67B03 0%, #DAAF08 45%, #fff7da 70%, #DAAF08 85%, #B67B03 90% 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+#works .item .title .better{
+    background: linear-gradient(90deg, #a38131 0%, #e7c76d 33%, #ffe6c5 62%, #e3c05d 83%, #9d874e 100%);
+  background: -webkit-linear-gradient(0deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

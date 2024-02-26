@@ -20,8 +20,7 @@
 
                 <nav id="contents">
                     <li><a class="nav_item" href="#top_start">Top</a></li>
-                    <li><a class="nav_item" href="#profile_start">Profile</a></li>
-                    <li><a class="nav_item" href="#works_start">Works</a></li>                
+                    <li><a class="nav_item" href="#profile_start">Profile</a></li>    
                     <li><a class="nav_item" href="#games_start">Games</a></li>
                     <li><a class="nav_item" href="#tools_start">Tools</a></li>
                     <li><a class="nav_item" href="#others_start">Others</a></li>
@@ -143,24 +142,17 @@
         
         <hr>
 
-        <!-- 作品 -->
-        <div id="works_start"></div>
-        <div class="summary"><p>～ ＷＯＲＫＳ ～</p></div>
-
-        <hr>
-
-        
-
         <!-- ゲーム -->
         <div id="games_start"></div>
         <div class="summary"><p>ＧＡＭＥＳ</p></div>
+        <div class="works_type"><p>private</p></div>
         <div id="works">
-
+        
 <!--Mage-->
             <div class="item">
-                <div class="title">Mage</div>
+                <div class="title"><div class="best">Mage</div></div>
                 <div class="modalOpen">
-                    <div class="img">
+                    <div class="best_img">
                         <img class="gold" src="Images/mage.png" onclick="ModalOpen(1)">
                         <div class="hover-text">タップして詳細表示</div>
                     </div> 
@@ -200,11 +192,12 @@
                 </div>
             </div>
 
+            <br>
 <!--KnifeSurvivor-->
             <div class="item">
-                <div class="title">KnifeSurvivor</div>
+                <div class="title"><div class="better">KnifeSurvivor</div></div>
                 <div class="modalOpen">
-                    <div class="img">
+                    <div class="better_img">
                         <img class="silver" src="Images/knife_survivor.png" onclick="ModalOpen(2)">
                         <div class="hover-text">タップして詳細表示</div>
                     </div>
@@ -476,13 +469,18 @@
                     </div>
                 </div>
             </div>
-            
+        </div>
+
+<!-- ここからチーム制作物 -->
+        <br>
+        <div class="works_type"><p>team</p></div>
+        <div id="works">
 <!--Mugitya-->
             <div class="item">
                 <div class="title">Mugitya</div>
                 <div class="modalOpen">
                     <div class="img">
-                        <img class="team" src="Images/none_image.png" onclick="ModalOpen(8)">
+                        <img class="team" src="Images/mugitya.png" onclick="ModalOpen(8)">
                         <div class="hover-text">タップして詳細表示</div>
                     </div> 
                 </div>
@@ -647,16 +645,7 @@
             </div> 
         </div>
 <!--ゲームは以上-->
-        
-        <div id="ComingSoon">
-            <br><br>
-            <p>ComingSoon...(?)</p>
-            <div id="contents">
-                <p>JumpOnRadder!</p>
-                <p>PazzleButtle</p>
-            </div>
-        </div>
-
+        <br><br>
         <CenterLine><hr></CenterLine>
 
         <!-- ツール -->
@@ -799,14 +788,7 @@
         </div>
         
 
-        <div id="ComingSoon">
-            <br><br>
-            <p>ComingSoon...(?)</p>
-            <div id="contents">
-                <p>CSV_Parser ver.2.0.0</p>
-                <p>Particle Generator</p>
-            </div>
-        </div>
+        
 
         <hr>
 
