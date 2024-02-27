@@ -58,7 +58,7 @@
     to {background-position: right}
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:1436px){
 
     .HEW .title{
         text-align: center;
@@ -77,7 +77,7 @@
 
     .HEW .img{
         width:60%;
-        margin:-10% auto;
+        margin:0% auto;
     }
 
     .HEW .works{

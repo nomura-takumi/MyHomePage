@@ -170,6 +170,32 @@
         
     }
 
+    /* ベスト */
+    #works .best_img img{
+        position: relative;
+        width:240px;
+        height:150px;
+        border: 5px solid #ffffff;
+
+        transform: scale(1.0, 1.0);
+        transition:0.3s all;
+        filter:brightness(100%);
+        margin-top: 2%;
+    }
+
+    /* ベター */
+    #works .better_img img{
+        position: relative;
+        width:240px;
+        height:150px;
+        border: 5px solid #ffffff;
+
+        transform: scale(1.0, 1.0);
+        transition:0.3s all;
+        filter:brightness(100%);
+        margin-top: 2%;
+    }
+
     /* アイテムのタイトル */
     #works .item .title{
         text-align: center;
