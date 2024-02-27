@@ -1,0 +1,101 @@
+
+.HEW .title{
+    text-align: center;
+    color : gold;
+    font-size:30px;
+    line-height: 50px;
+}
+
+.HEW p{
+    color : white;
+    font-size:30px;
+    padding-left :17%;
+    text-align: left;
+    line-height: 50px;
+}
+
+.HEW .img{
+    width: 30%;
+    margin:-10% 60% auto;
+}
+
+.HEW img{
+    width:100%;
+    height:auto;
+}
+
+.HEW .works{
+    margin-top: -15%;
+}
+
+.HEW .work_img_parent{
+    margin:0% auto;
+    padding-left: 20%;
+}
+
+.HEW .work_img{
+    display: flex;
+    position: relative;
+    width: 30%;
+}
+
+.HEW .greet{
+    font-size:30px;
+    font-weight: bold;
+    text-align:center;
+    line-height: 50px;
+
+    background: linear-gradient(45deg, #FA8BFF 16%, #2BD2FF 57%, #2BFF88 90%);
+    background: -webkit-linear-gradient(45deg, #FA8BFF 16%, #2BD2FF 57%, #2BFF88 90%);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientEffect 2.5s infinite alternate;
+}
+
+@keyframes gradientEffect {
+    from {background-position: left}
+    to {background-position: right}
+}
+
+@media screen and (max-width:500px){
+
+    .HEW .title{
+        text-align: center;
+        color : gold;
+        font-size:20px;
+        line-height: 50px;
+    }
+
+    .HEW p{
+        color : white;
+        font-size:15px;
+        padding-left :17%;
+        text-align: left;
+        line-height: 20px;
+    }
+
+    .HEW .img{
+        width:60%;
+        margin:-10% auto;
+    }
+
+    .HEW .works{
+        margin-top: 15%;
+    }
+    
+    .HEW .greet{
+        font-size:10px;
+        font-weight: bold;
+        text-align:center;
+        line-height: 50px;
+    
+        background: linear-gradient(45deg, #FA8BFF 16%, #2BD2FF 57%, #2BFF88 90%);
+        background: -webkit-linear-gradient(45deg, #FA8BFF 16%, #2BD2FF 57%, #2BFF88 90%);
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientEffect 2.5s infinite alternate;
+    }
+    
+}
