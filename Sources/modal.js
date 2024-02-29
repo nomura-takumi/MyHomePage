@@ -14,8 +14,8 @@ function ModalOpen(number){
     modalWindow.style.display = "block";
 
     // スクロール禁止
-    document.addEventListener('touchmove', disableScroll, {passive: false});
-    document.addEventListener('mousewheel', disableScroll, {passive: false});
+    //document.addEventListener('touchmove', disableScroll, {passive: false});
+    //document.addEventListener('mousewheel', disableScroll, {passive: false});
 }
 
 let players = [];
@@ -58,8 +58,8 @@ function ModalClose(){
     });
 	
     // スクロール解除
-    document.removeEventListener('touchmove', disableScroll, {passive: false});
-    document.removeEventListener('mousewheel', disableScroll, {passive: false});
+    //document.removeEventListener('touchmove', disableScroll, {passive: false});
+    //document.removeEventListener('mousewheel', disableScroll, {passive: false});
 }
 
 

@@ -161,10 +161,108 @@
 
 
 @media screen and (max-width:1436px){
+
+    /* モーダルウィンドウ */
+    .modal-window{
+        display: none;
+        position:fixed;
+        z-index: 100;
+        left:0%;
+        top:0%;
+        width: 100%;
+        height:60%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    /* コンテンツ */
+    .modal-contents{
+        background-color:#f4f4f4;
+        margin:5% auto;
+        width:100%;
+        height:75%;
+        animation-name:modalOpen;
+        animation-duration:1s;
+        color:black;
+    }
+
+    /* 閉じるボタン */
+    .modalClose{
+        font-size: 2rem;
+        position: absolute;
+        right:0%;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    
     /* モーダルの中身 */
     .modal-body{
         display: flex;
-        padding:00px 0px 0px 0px;
+        padding:20px 0px 0px 10px;
+        width:100%;
         height:100%;
+        white-space: nowrap;
+        word-break: break-all;
+    }
+
+    /* モーダルのテキスト */
+    .modal-body .text{
+        background-color: white;
+
+        height: 50vh;
+        white-space: nowrap;
+
+    }
+
+    /* フリーテキスト */
+    .modal-body .free-text{
+        font-size: 8px;
+        margin-right:10px;
+    }
+
+    /* 情報テキスト */
+    .modal-body .info-text{
+        margin-top:5%;
+        font-size:12px;
+    }
+
+    /* videoタグ */
+    .modal-body video{
+        margin-left:10px;
+        width:30%;
+        height:30%;
+        object-fit: cover;
+        right:0;
+        z-index: 1;
+    }
+
+    /* iframeタグ */
+    .modal-body iframe{
+        margin-left:5px;
+        padding-right:3%;
+        width:70%;
+        height:40%;
+        object-fit: cover;
+        right:0;
+        z-index: 1;
+    }
+
+    /* その他コンテンツ */
+    .modal-body .other{
+        position: absolute;
+        margin-left: 50%;
+        top:50%;
+        z-index: 0;
+    }
+
+    /* プレイ画像 */
+    .modal-body .other .play .img{
+        width:20px;
+    }
+
+    /* ダウンロード画像 */
+    .modal-body .other .download .img{
+        width:20px;
     }
 }
