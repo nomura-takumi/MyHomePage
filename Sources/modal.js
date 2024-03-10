@@ -12,10 +12,6 @@ function ModalOpen(number){
     let modals = document.getElementsByClassName("modal-window");
     modalWindow = modals[number];
     modalWindow.style.display = "block";
-
-    // スクロール禁止
-    //document.addEventListener('touchmove', disableScroll, {passive: false});
-    //document.addEventListener('mousewheel', disableScroll, {passive: false});
 }
 
 let players = [];
@@ -53,13 +49,6 @@ function ModalClose(){
 	players.forEach((player)=>{
 		player.pauseVideo();
 	});
-    document.querySelectorAll("video").forEach((element)=>{
-        element.pause();
-    });
-	
-    // スクロール解除
-    //document.removeEventListener('touchmove', disableScroll, {passive: false});
-    //document.removeEventListener('mousewheel', disableScroll, {passive: false});
 }
 
 
