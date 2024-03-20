@@ -90,3 +90,8 @@ a.play{
 #ComingSoon #contents{
     color: gray;
 }
+
+#url a{
+    font-size:20px;
+    margin-left:2%;
+}
