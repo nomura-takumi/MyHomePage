@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8, initial-scale=0.9">
     <title>Unity WebGL Player | 20240427</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -21,6 +21,14 @@
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">20240427</div>
+      </div>
+      <div id="how-to-play">
+        <p>操作方法</p>
+        <p>タイトルから遷移：Aボタン or Enterキー</p>
+        <p>横移動：A・Dキー or 左スティック</p>
+        <p>ワイヤー射出方向表示：右スティック or 右クリックかつマウス移動</p>
+        <p>ワイヤー射出：左クリック押下中 or LB押下中</p>
+        <p>ワイヤージャンプ：ワイヤー射出中かつSPACEキー or ワイヤー射出中かつBボタン</p>
       </div>
     </div>
     <script>
@@ -56,11 +64,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js";
+      var loaderUrl = buildUrl + "/0503.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebGL.data.unityweb",
-        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
+        dataUrl: buildUrl + "/0503.data.unityweb",
+        frameworkUrl: buildUrl + "/0503.framework.js.unityweb",
+        codeUrl: buildUrl + "/0503.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "20240427",
